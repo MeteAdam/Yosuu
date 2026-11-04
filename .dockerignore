@@ -1,0 +1,15 @@
+**
+!Dockerfile
+!pyproject.toml
+!uv.lock
+!yosuu/
+!yosuu/*.py
+!frontend/
+!frontend/package*.json
+!frontend/*.ts
+!frontend/*.json
+!frontend/index.html
+!frontend/public/
+!frontend/public/**
+!frontend/src/
+!frontend/src/**

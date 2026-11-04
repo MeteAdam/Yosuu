@@ -1,0 +1,21 @@
+[project]
+name = "yosuu"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.128,<1",
+    "uvicorn>=0.35,<1",
+    "yt-dlp[curl-cffi,default]==2026.10.26",
+]
+
+[dependency-groups]
+dev = ["ruff>=0.15,<1", "pytest>=9,<10", "httpx2>=2,<3"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "ASYNC"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

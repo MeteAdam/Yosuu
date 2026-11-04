@@ -1,0 +1,14 @@
+services:
+  yosuu:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      YOSUU_LINK_PLATFORMS: ${YOSUU_LINK_PLATFORMS:-}
+      YOSUU_HOSTS: ${YOSUU_HOSTS:-localhost,127.0.0.1}
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    cpus: 2
+    mem_limit: 1536m

@@ -1,0 +1,74 @@
+@import './theme.css';
+
+.shell { width: min(100% - 72px, 1040px); margin-inline: auto; }
+.masthead, footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.masthead { min-height: 75px; border-bottom: 1px solid var(--rule); }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 1.25rem; font-weight: 600; letter-spacing: .02em; }
+.brand svg { color: var(--accent); }
+.masthead-label, .panel-heading span, dt, dd, .job-state { font-family: var(--mono); }
+.masthead-label { color: var(--muted); font-size: .75rem; }
+.intro { margin-block: clamp(38px, 6.2vw, 80px) 30px; }
+h1 { font-size: clamp(2.1rem, 5vw, 4.25rem); line-height: 1; font-weight: 600; letter-spacing: -.055em; margin: 0 0 16px; }
+.intro p { margin: 0; color: var(--muted); font-size: 1.04rem; }
+.workbench { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .55fr); border: 1px solid var(--rule); border-radius: var(--radius); background: var(--panel); }
+.source-panel, .export-panel { padding: clamp(20px, 3.6vw, 38px); min-width: 0; }
+.export-panel { display: flex; flex-direction: column; border-left: 1px solid var(--rule); background: var(--side); border-radius: 0 var(--radius) var(--radius) 0; }
+.panel-heading { display: flex; gap: 13px; align-items: baseline; margin-bottom: 26px; }
+.panel-heading span { color: var(--accent); font-size: .8rem; }
+.panel-heading h2 { font-size: 1.35rem; margin: 0; font-weight: 600; }
+fieldset { padding: 0; margin: 0; border: 0; min-inline-size: 0; }
+legend, form > label:not(.consent), .export-panel > label { display: block; margin-bottom: 8px; font-weight: 500; }
+.mode-switch, .format-switch { display: flex; gap: 8px; margin-bottom: 23px; }
+.mode-switch label, .format-switch label { position: relative; cursor: pointer; }
+.mode-switch label { display: flex; align-items: center; justify-content: center; min-width: 72px; min-height: 44px; padding-inline: 12px; border: 1px solid var(--control); border-radius: var(--radius); }
+.mode-switch input, .format-switch input { margin: 0; accent-color: var(--accent); }
+.mode-switch input { margin-right: 8px; }
+.mode-switch label:has(input:checked), .format-switch label:has(input:checked) { border-color: var(--accent); }
+.mode-switch label:has(input:focus-visible), .format-switch label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.format-switch label { flex: 1; display: flex; min-height: 60px; align-items: flex-start; gap: 8px; padding: 9px 10px; border: 1px solid var(--control); border-radius: var(--radius); font-family: var(--mono); }
+.format-switch input { margin-top: 5px; }
+.format-switch small { display: block; color: var(--muted); font: .78rem 'IBM Plex Sans', sans-serif; }
+fieldset:disabled label, .format-switch label:has(input:disabled) { cursor: default; color: var(--muted); }
+input[type='url'], input[type='file'], select { display: block; width: 100%; min-height: 46px; border: 1px solid var(--control); border-radius: var(--radius); background: var(--well); padding: 10px 12px; }
+input[type='url'] { box-shadow: inset 3px 3px 7px #111214, inset -2px -2px 6px #2a2b2e; }
+input[type='file'] { font-size: .9rem; }
+input::file-selector-button { background: var(--panel); color: var(--ink); border: 1px solid var(--control); border-radius: var(--radius); margin-right: 10px; padding: 5px 8px; cursor: pointer; }
+input::placeholder { color: var(--muted); }
+.consent { display: flex; align-items: flex-start; gap: 9px; margin: 12px 0 0; font-size: .9rem; }
+.consent input { width: 16px; height: 16px; accent-color: var(--accent); margin: 3px 0 0; flex: none; }
+.hint { margin: 8px 0 0; color: var(--muted); font-size: .86rem; }
+.raised, .primary, .secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 9px 17px; border-radius: var(--radius); font-weight: 600; text-decoration: none; cursor: pointer; }
+.raised { margin-top: 19px; background: #2c2d30; border: 1px solid var(--control); box-shadow: 4px 4px 10px #191a1b, -3px -3px 8px #353638; }
+.raised:not(:disabled):active { box-shadow: inset 2px 2px 7px #171819; }
+.raised:not(:disabled):hover, .secondary:not(:disabled):hover { background: #36373b; }
+.readout { margin-top: 26px; border-top: 1px solid var(--rule); padding-top: 17px; min-height: 104px; }
+.readout h3 { margin: 0; font-size: .92rem; font-weight: 600; }
+.readout p { color: var(--muted); margin: 7px 0 0; font-size: .9rem; overflow-wrap: anywhere; }
+.readout p.source-title { color: var(--ink); font-size: 1.08rem; }
+dl { display: flex; flex-wrap: wrap; gap: 12px 25px; margin: 10px 0 0; }
+dl > div { display: flex; gap: 8px; }
+dt, dd { margin: 0; font-size: .77rem; }
+dt { color: var(--muted); }
+video, audio { display: block; width: 100%; margin-top: 15px; border-radius: var(--radius); }
+video { max-height: 210px; background: var(--well); }
+.job-state { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: .8rem; margin: 21px 0 13px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.lamp { display: inline-block; width: 8px; height: 8px; border: 1px solid var(--muted); border-radius: 50%; flex: none; }
+.lamp.active { background: var(--accent); border-color: var(--accent); }
+.error { color: #f2ad97; font-size: .88rem; margin: 0 0 12px; }
+.actions { display: grid; gap: 8px; }
+.primary { background: var(--accent); border: 1px solid var(--accent); color: #211910; }
+.primary:not(:disabled):hover { background: #edc395; }
+.secondary { background: transparent; border: 1px solid var(--control); }
+button:disabled { cursor: default; }
+.raised:disabled, .primary:disabled { color: var(--muted); background: var(--well); border-color: var(--control); box-shadow: none; }
+footer { margin-block: 23px 40px; color: var(--muted); font-size: .84rem; }
+footer nav { display: flex; flex-wrap: wrap; gap: 16px; }
+footer a { display: inline-flex; align-items: center; min-height: 32px; text-underline-offset: 4px; }
+
+@media (max-width: 690px) {
+  .shell { width: calc(100% - 32px); }
+  .workbench { grid-template-columns: minmax(0, 1fr); }
+  .export-panel { border-left: 0; border-top: 1px solid var(--rule); border-radius: 0 0 var(--radius) var(--radius); }
+  .masthead { min-height: 58px; }
+  footer { align-items: flex-start; flex-direction: column; gap: 4px; }
+}

@@ -1,0 +1,5 @@
+html { color-scheme: dark; background: #202123; color: #f1ede6; font: 1.05rem/1.6 system-ui, sans-serif; }
+main { width: min(100% - 40px, 680px); margin: 60px auto; }
+a { color: #dfb382; text-underline-offset: 4px; }
+a:focus-visible { outline: 2px solid #dfb382; outline-offset: 4px; }
+h1 { line-height: 1.12; }
