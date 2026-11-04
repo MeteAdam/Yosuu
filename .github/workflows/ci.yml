@@ -58,10 +58,10 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
-      - run: docker compose up --build --detach
+      - run: docker compose up --build --wait --wait-timeout 45
       - name: Check the bundled API and workbench
         run: |
-          curl --fail --retry 10 --retry-connrefused http://127.0.0.1:8000/api/config
+          curl --fail http://127.0.0.1:8000/api/config
           curl --fail http://127.0.0.1:8000/ | grep -F 'Yosuu'
       - if: failure()
         run: docker compose logs
